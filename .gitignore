@@ -3,3 +3,4 @@
 
 # your 'seed' databases need not go into the repo
 *.db
+*.save
