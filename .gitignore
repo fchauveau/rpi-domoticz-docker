@@ -1,0 +1,5 @@
+# general ignoring ~ files
+*~
+
+# your 'seed' databases need not go into the repo
+*.db
