@@ -6,35 +6,25 @@
 # Base image.
 FROM resin/rpi-raspbian
 
-MAINTAINER Nanne Huiges
+MAINTAINER Florian Chauveau
 
 # Install Domoticz from sources.
 RUN \
   apt-get update && \
   apt-get install -y cmake apt-utils build-essential && \
-  apt-get install -y libboost-dev libboost-thread-dev libboost-system-dev libsqlite3-dev subversion curl libcurl4-openssl-dev libusb-dev zlib1g-dev
-
-RUN \
-  apt-get install -y wget
-
-# Define working directory.
-WORKDIR /root/domoticz
-
-# Getting the source code
-RUN \
-  wget http://domoticz.sourceforge.net/domoticz_linux_armv7l.tgz
-
-RUN \
-  tar xvfz domoticz_linux_armv7l.tgz
+  apt-get install -y libboost-dev libboost-thread-dev libboost-system-dev libsqlite3-dev subversion curl libcurl4-openssl-dev libusb-dev zlib1g-dev && \
+  curl -o /root/domoticz_linux_armv7l.tgz http://domoticz.sourceforge.net/domoticz_linux_armv7l.tgz && \
+  mkdir /root/domoticz && \
+  tar xvfz /root/domoticz_linux_armv7l.tgz -C /root/domoticz && \
+  apt-get clean && \
+  apt-get autoclean && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/domoticz_linux_armv7l.tgz
 
 # cp database (if present, otherwise gives info message)
-ADD domoticz.db /root/domoticz/domoticz.db
+#ADD domoticz.db /root/domoticz/domoticz.db
 
 # mountable backup dir
 VOLUME /root/domoticz/backup
-
-# Clean up APT when done.
-RUN apt-get clean
 
 # Expose port.
 EXPOSE 8080
