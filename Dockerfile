@@ -1,5 +1,5 @@
 #
-# Dockerfile for Domoticz
+# Dockerfile for Rpi-Domoticz
 #
 # Based on version by LBTM
 #
@@ -20,14 +20,7 @@ RUN \
   apt-get autoclean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/domoticz_linux_armv7l.tgz
 
-# cp database (if present, otherwise gives info message)
-#ADD domoticz.db /root/domoticz/domoticz.db
-
-# mountable backup dir
-VOLUME /root/domoticz/backup
-
 # Expose port.
 EXPOSE 8080
 
-#CMD ["service domoticz start"]]
-CMD ["/root/domoticz/domoticz", "-www 8080"]
+CMD ["/root/domoticz/domoticz", "-www", "8080"]
