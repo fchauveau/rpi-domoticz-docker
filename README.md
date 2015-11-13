@@ -28,7 +28,7 @@ The basic command is this:
 
 Explanations
 
-* `docker run -d MyDomoticz` : the basic run command
+* `docker run -d my_domoticz` : the basic run command
 * `--device=/dev/ttyUSB0` means we expose a device we need to the container.
  * the old way to do this was to use --privileged, but this is a better option
  * when using --privileged, use something like: sudo docker run `---privileged -v /dev/bus/usb:/dev/bus/usb`
