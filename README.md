@@ -23,12 +23,13 @@ Running
 ===
 The basic command is this:
 
-    docker run --device=/dev/ttyUSB0 -v /SOMEPATH/domoticz.db:/root/domoticz/domoticz.db:rw -p 8080:8080 --name domoticz --restart=always -d my_domoticz
+    docker run --device=/dev/ttyUSB0 -v /etc/localtime:/etc/localtime -v /SOMEPATH/domoticz.db:/root/domoticz/domoticz.db:rw -p 8080:8080 --name domoticz --restart=always -d my_domoticz
 
 
 Explanations
 
 * `docker run -d my_domoticz` : the basic run command
+* `-v /etc/localtime:/etc/localtime` : use time of the host 
 * `--device=/dev/ttyUSB0` means we expose a device we need to the container.
  * the old way to do this was to use --privileged, but this is a better option
  * when using --privileged, use something like: sudo docker run `---privileged -v /dev/bus/usb:/dev/bus/usb`
