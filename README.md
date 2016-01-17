@@ -1,6 +1,8 @@
 domoticz-docker
 ===============
 
+[![](https://badge.imagelayers.io/agileek/rpi-domoticz-docker:2.3530.svg)](https://imagelayers.io/?images=agileek/rpi-domoticz-docker:2.3530 'Get your own badge on imagelayers.io')
+
 Dockerfile for domoticz on raspberry pi.
 Starts a container that can be 'seeded' with an available (backup) database, if one is in the context directory.
 Opens a volume for the backups directory, so you can easily retrieve any database backups.
