@@ -18,7 +18,7 @@ Getting your files
 
 Building
 ===
- * cd rpi-domoticz-docker
+ * cd domoticz-docker
  * sudo docker build -t my_domoticz .
 
 Running
