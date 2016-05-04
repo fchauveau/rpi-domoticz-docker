@@ -40,6 +40,12 @@ Explanations
 * `-p 8080:8080` means that we expose the 8080 port to local 8084
  * domoticz (and our docker install) run on port 8080, but if you have anything running on your machine, this could be an issue
 
+Pro tips
+===
+
+If you want to access the temperature of your raspberry pi within docker, you have to add `--device=/dev/vchiq -e LD_LIBRARY_PATH=/opt/vc/lib -v /opt/vc:/opt/vc:ro` to your docker run command
+> Thanks to @aikomastboom for pointing that out
+
 
 Browsing
 ===
