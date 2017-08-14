@@ -4,7 +4,7 @@
 # Based on version by LBTM
 #
 # Base image.
-FROM resin/rpi-raspbian:jessie-20161026
+FROM resin/rpi-raspbian:jessie-20170809
 
 MAINTAINER Florian Chauveau
 
