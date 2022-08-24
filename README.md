@@ -1,3 +1,11 @@
+ARCHIVED
+===============
+Not longer used and probably fully depretaced
+
+
+--------------
+
+
 domoticz-docker
 ===============
 
